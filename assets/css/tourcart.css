@@ -1,0 +1,700 @@
+
+
+/* * {
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f1f5f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    text-align: center;
+    color: #1d4ed8;
+    margin-bottom: 24px;
+} */
+
+.booking-form {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* مؤشر الخطوات */
+.step-indicator {
+    background-color: #ebf1f1;
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.step-item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+}
+
+.step-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #e2e8f0;
+    color: #64748b;
+    margin-left: 6px;
+    margin-right: 7px;
+}
+
+.step-item.active .step-circle {
+    background-color: #ffc107;
+    color: white;
+}
+
+.step-item.completed .step-circle {
+    background-color: #b97d25;
+    color: white;
+}
+
+.step-name {
+    font-size: 14px;
+    color: #0d0660;
+}
+
+.step-item.active .step-name {
+    color: #0f086f;
+    font-weight: bold;
+}
+
+.step-line {
+    flex: 1;
+    height: 3px;
+    background-color: #e2e8f0;
+    margin: 0 8px;
+}
+
+.step-item.completed+.step-item .step-line,
+.step-item.completed .step-line {
+    background-color: #b97d25;
+}
+
+/* محتوى الخطوات */
+.step-content {
+    padding: 24px;
+    padding-top: 11px;
+}
+
+.step-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+
+/* أزرار التنقل */
+.form-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 24px;
+    background-color: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: none;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid #cbd5e1;
+    color: #64748b;
+}
+
+.btn-outline:hover {
+    background-color: #f1f5f9;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* خطوة التاريخ */
+.date-picker-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flatpickr-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
+    font-size: 24px !important;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.selected-date {
+    color: #b97d25;
+    font-weight: 500;
+    margin-top: 18px;
+}
+
+/* خطوة الفئة */
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.category-item {
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.category-item:hover {
+    border-color: #93c5fd;
+}
+
+.category-item.selected {
+    border-color: #2563eb;
+    background-color: #eff6ff;
+}
+
+.category-info h3 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+}
+
+.category-price {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.category-check {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #2563eb;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+}
+
+/* خطوة الغرف */
+.rooms-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.room-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counter-box {
+    background-color: #f8fafc;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.counter-value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0f086f;
+    width: 40px;
+    text-align: center;
+}
+
+.counter-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #cbd5e1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.counter-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.room-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 12px;
+}
+
+.room-title {
+    font-weight: 500;
+    margin: 0 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 28px;
+}
+
+.occupant-row {
+    margin-bottom: 12px;
+}
+
+.occupant-counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.age-hint {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.price-info {
+    text-align: center;
+    margin-top: 0;
+    font-size: 19px;
+    color: #444;
+    font-weight: 700;
+}
+
+.total-price {
+    font-weight: bold;
+    color: #b97d25;
+}
+
+/* خطوة الملخص */
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.summary-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: -2px;
+}
+
+.check-icon {
+    width: 48px;
+    height: 48px;
+    background-color: #16a34a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+}
+
+.summary-title {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+
+.summary-item {
+    /* background-color: #f8fafc; */
+    padding: 2px 20px;
+    border-radius: 8px;
+}
+
+.summary-label {
+    color: #0d0660;
+    font-size: 21px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.summary-value {
+    font-weight: 400;
+    color: #000;
+    font-size: 19px;
+}
+
+.price-summary {
+    background-color: #eff6ff;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.price-summary .summary-label {
+    color: #0d0660;
+}
+
+.price-summary .summary-value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price-detail {
+    font-size: 15px;
+    color: #b97d25;
+}
+
+.occupant-counter span{
+
+        font-size: 22px;
+}
+
+/* body {
+  font-family: Arial, sans-serif;
+  background: #f8f9fc;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  width: 400px;
+  margin-top: 40px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  color: #2563eb;
+}
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.step {
+  text-align: center;
+  width: 28px;
+  height: 40px;
+  padding: 0;
+  border-radius: 9px;
+  background: #e5e7eb;
+  color: #6b7280;
+  font-weight: bold;
+  font-size: 0;
+  transition: 0.3s;
+}
+
+.step.active {
+  background: #2563eb;
+  color: white;
+}
+
+.step-content {
+  display: none;
+}
+
+.step-content.active {
+  display: block;
+}
+
+.calendar {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fafbfd;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: bold;
+  padding: 10px 0;
+}
+
+.calendar table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar th, .calendar td {
+  width: 14.28%;
+  text-align: center;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.calendar td:hover {
+  background-color: #edf3ff;
+}
+
+.selected-date {
+  color: #2c6ef2;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.category {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.category:hover {
+  border-color: #2563eb;
+}
+
+.category span {
+  display: block;
+  color: #6b7280;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+#roomContainer {
+  margin-top: 20px;
+}
+
+.room {
+  margin-bottom: 15px;
+}
+
+#summary {
+  font-size: 16px;
+  color: #333;
+  margin-top: 20px;
+}
+
+#summary p {
+  margin-bottom: 10px;
+}
+
+#summary strong {
+  color: #2563eb;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+#prevBtn {
+  background: #e5e7eb;
+}
+
+#nextBtn {
+  background: #2563eb;
+  color: white;
+}
+
+
+.steps {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+
+
+.step.active {
+  background: #2563eb;
+  color: white;
+}
+
+.step .step-number {
+  font-size: 27px;
+}
+
+.step .step-icon {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 18px;
+  height: 18px;
+  background: white;
+  border-radius: 50%;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #2563eb;
+  visibility: hidden;
+}
+
+.step.completed .step-icon {
+  visibility: visible;
+}
+
+.step-label {
+  display: block;
+  margin-top: 5px;
+}
+
+.step .step-icon::after {
+  content: "✔";
+  font-size: 14px;
+  color: green;
+}
+.category {
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.category.selected {
+  box-shadow: 0 0 10px #0d0660eb; Shadow
+  border-color: #f8f9fa;
+}
+
+.category.selected::after {
+  content: "✓";
+  position: absolute;
+  top: 11px;
+  right: 14px;
+  background: green;
+  color: white;
+  font-size: 16px;
+  padding: 1px 5px;
+}
+
+
+
+
+
+.progress-container {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 2em auto;
+  max-width: 350px;
+}
+
+.progress-container::before {
+  content: '';
+  background-color: #C2D9FF;
+  height: 4px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.progress-bar {
+  background-color: #7752FE;
+  height: 4px;
+  width: 0%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #190482;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #C2D9FF;
+  transition: 0.4s ease;
+}
+
+.circle.active {
+  border-color: #7752FE;
+  background-color: #7752FE;
+  color: #fff;
+}
+
+.nav-buttons {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.btn {
+  background-color: #7752FE;
+  color: white;
+  border: none;
+  padding: 0.6em 2em;
+  border-radius: 5px;
+  margin: 0.5em;
+  font-weight: bold;
+  cursor: pointer;
+}
+.btn:disabled {
+  background-color: #C2D9FF;
+  cursor: not-allowed;
+} */
+

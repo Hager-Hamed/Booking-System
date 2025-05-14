@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Template - Travel Tour Agency Template" />
+    <meta name="keywords" content="new, html, Tour, travel, creative, booking,  personal, " />
+    <title>New travel Agency</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="manifest" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="mask-icon" href="./assets/images/logo4-removebg-preview.png" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="360x360" href="./assets/images/logo4-removebg-preview.png">
+
+    <!---==============================================================================================
+                          Librairies
+        ==================================================================================================-->
+    <!-- ========== font-awesome =========== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ============= Bootstrap  ===========  -->
+    <link href="./assets/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- ============= swiper  ===========  -->
+    <link rel="stylesheet" href="./assets/lib/swiper/swiper-bundle.min.css" />
+    <!-- =============  jquery ===========  -->
+    <link rel="stylesheet" href="./assets/lib/jquery/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/lib//lity/lity.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- ============= style  css ============= -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/tour.css" />
+    <link rel="stylesheet" href="./assets/css/tourcart.css" />
+
+</head>
+
+<body>
+
+
+    <!--===============================================================
+            tour-details
+  =================================================================-->
+
+    <section class="tour-details mb-5">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-8">
+
+                    <div class="tour_heading mt-5 mb-3">
+                        <h1>3 Days Bahariya Oasis and White Desert Safari Trip</h1>
+                    </div>
+
+                    <div class="tour-title-box d-flex align-items-center gap-2">
+                        <span>
+                            <i class="fa-solid fa-route"></i>
+                        </span>
+                        <h2 class="tour-details-title">Check your price offer</h2>
+                    </div>
+                    <div class="page-wrapper tour_details_right " id="Book_Now">
+
+
+
+                        <div class="">
+                            <!-- <h1>Booking System</h1> -->
+
+                            <div class="booking-form">
+                                <!-- Step Indicator -->
+                                <div class="step-indicator">
+                                    <div class="step-item active" data-step="0">
+                                        <div class="step-circle">1</div>
+                                        <span class="step-name">Date</span>
+                                        <div class="step-line"></div>
+                                    </div>
+                                    <div class="step-item" data-step="1">
+                                        <div class="step-circle">2</div>
+                                        <span class="step-name">Category</span>
+                                        <div class="step-line"></div>
+                                    </div>
+                                    <div class="step-item" data-step="2">
+                                        <div class="step-circle">3</div>
+                                        <span class="step-name">Rooms</span>
+                                        <div class="step-line"></div>
+                                    </div>
+                                    <div class="step-item" data-step="3">
+                                        <div class="step-circle">4</div>
+                                        <span class="step-name">Summary</span>
+                                    </div>
+                                </div>
+
+                                <!-- Step Content -->
+                                <div class="step-content">
+                                    <!-- Date Step -->
+                                    <div class="step" data-step="0">
+                                        <h2 class="step-title">Select Date</h2>
+                                        <div class="date-picker-container">
+                                            <input type="text" id="datePicker" class="flatpickr-input"
+                                                placeholder="Select booking date">
+                                            <div id="selectedDate" class="selected-date" style="display: block;"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Category Step -->
+                                    <div class="step" data-step="1" style="display: none;">
+                                        <h2 class="step-title">Choose Category and Price</h2>
+                                        <div class="category-list">
+                                            <div class="category-item" data-id="economy" data-name="Economy"
+                                                data-price="100">
+                                                <div class="category-info">
+                                                    <h3>Economy</h3>
+                                                    <p class="category-price">$100 per night</p>
+                                                </div>
+                                                <div class="category-check" style="display: none;">✓</div>
+                                            </div>
+                                            <div class="category-item" data-id="standard" data-name="Standard"
+                                                data-price="200">
+                                                <div class="category-info">
+                                                    <h3>Standard</h3>
+                                                    <p class="category-price">$200 per night</p>
+                                                </div>
+                                                <div class="category-check" style="display: none;">✓</div>
+                                            </div>
+                                            <div class="category-item" data-id="premium" data-name="Premium"
+                                                data-price="300">
+                                                <div class="category-info">
+                                                    <h3>Premium</h3>
+                                                    <p class="category-price">$300 per night</p>
+                                                </div>
+                                                <div class="category-check" style="display: none;">✓</div>
+                                            </div>
+                                            <div class="category-item" data-id="luxury" data-name="Luxury"
+                                                data-price="500">
+                                                <div class="category-info">
+                                                    <h3>Luxury</h3>
+                                                    <p class="category-price">$500 per night</p>
+                                                </div>
+                                                <div class="category-check" style="display: none;">✓</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Rooms Step -->
+                                    <div class="step" data-step="2" style="display: none;">
+                                        <h2 class="step-title">Select Number of Rooms</h2>
+                                        <div class="rooms-container">
+                                            <div class="room-counter">
+                                                <div class="counter-box">
+                                                    <button id="decreaseRoom" class="counter-button" disabled>-</button>
+                                                    <div id="roomCount" class="counter-value">1</div>
+                                                    <button id="increaseRoom" class="counter-button">+</button>
+                                                </div>
+                                            </div>
+
+                                            <div id="roomsList">
+                                                <!-- Rooms will be added here by JavaScript -->
+                                                <div class="room-card" data-room="0">
+                                                    <h3 class="room-title">Room 1</h3>
+
+                                                    <!-- Adults -->
+                                                    <div class="occupant-row">
+                                                        <div class="occupant-counter">
+                                                            <span>Adults</span>
+                                                            <div style="display: flex; align-items: center;">
+                                                                <button class="counter-button decrease-adult"
+                                                                    data-room="0" disabled>-</button>
+                                                                <div class="counter-value adult-count">1</div>
+                                                                <button class="counter-button increase-adult"
+                                                                    data-room="0">+</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Children -->
+                                                    <div class="occupant-row">
+                                                        <div class="occupant-counter">
+                                                            <span>Children</span>
+                                                            <div style="display: flex; align-items: center;">
+                                                                <button class="counter-button decrease-child"
+                                                                    data-room="0" disabled>-</button>
+                                                                <div class="counter-value child-count">0</div>
+                                                                <button class="counter-button increase-child"
+                                                                    data-room="0">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="age-hint">Ages 2 to 12 years</div> -->
+                                                    </div>
+
+                                                    <!-- Infants -->
+                                                    <div class="occupant-row">
+                                                        <div class="occupant-counter">
+                                                            <span>Infants</span>
+                                                            <div style="display: flex; align-items: center;">
+                                                                <button class="counter-button decrease-infant"
+                                                                    data-room="0" disabled>-</button>
+                                                                <div class="counter-value infant-count">0</div>
+                                                                <button class="counter-button increase-infant"
+                                                                    data-room="0">+</button>
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="age-hint">Under 2 years</div> -->
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="price-info">
+                                                Total Price: <span id="totalPrice" class="total-price">$0</span>
+                                                <div>(<span id="pricePerRoom">$0</span> × <span
+                                                        id="roomCountDisplay">1</span> room)</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Summary Step -->
+                                    <div class="step" data-step="3" style="display: none;">
+                                        <div class="summary-container">
+                                            <div class="summary-header">
+                                                <div class="check-icon">✓</div>
+                                            </div>
+                                            <h2 class="summary-title">Booking Summary</h2>
+
+                                            <div class="summary-item">
+                                                <div class="summary-label">Selected Date</div>
+                                                <div id="summaryDate" class="summary-value"></div>
+                                            </div>
+
+                                            <div class="summary-item">
+                                                <div class="summary-label">Category</div>
+                                                <div id="summaryCategory" class="summary-value"></div>
+                                            </div>
+
+                                            <div class="summary-item">
+                                                <div class="summary-label">Number of Rooms</div>
+                                                <div id="summaryRooms" class="summary-value"></div>
+                                            </div>
+
+                                            <div id="roomDetailsList" class="summary-item">
+                                                <div class="summary-label">Occupancy Details</div>
+                                                <!-- Will be filled by JavaScript -->
+                                            </div>
+
+                                            <div class="price-summary">
+                                                <div class="summary-label">Total Price</div>
+                                                <div id="summaryPrice" class="summary-value"></div>
+                                                <div class="price-detail">
+                                                    <span id="summaryPricePerRoom"></span> × <span
+                                                        id="summaryPriceRoomCount"></span> room(s)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Navigation Buttons -->
+                                <div class="form-footer">
+                                    <button id="prevBtn" class="btn btn-outline" disabled>Previous</button>
+                                    <button id="nextBtn" class="btn btn-primary" disabled>Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="tour-details-right h-100">
+                        <div class="tour-details-package mb-5 mt-5">
+
+                            <div class="tour-details-package-item">
+                                <h3 class="tour-details-package-title widget_title" id="Check_Availability">
+                                    <i class="fa-solid fa-signs-post"></i>
+                                    Tour Details
+                                </h3>
+                                <div class="box-info-tour">
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-3">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/from.svg"
+                                                alt="from.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Price from</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">
+                                                3500$</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/duration.svg"
+                                                alt="duration.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Duration </p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">9 Days</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-3">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/tour-location.svg"
+                                                alt="location.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Location</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">
+                                                Cairo, Luxor, Aswan </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-1">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/people.svg"
+                                                alt="people.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Group size</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">10</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-7">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/tour-type.svg"
+                                                alt="tour-type.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Type</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">package</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-3">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/pickup.svg"
+                                                alt="pickup.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Pick Up &amp; Drop off</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">
+                                                Cairo Airport
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tour-details-package mb-5 mt-4">
+                                <div class="tour-details-package-item">
+                                    <h3 class="tour-details-package-title widget_title" id="Check_Availability">
+                                        <i class="fa-solid fa-tags"></i>
+                                        Starts From
+                                        <br>
+                                        <span class="tour-heading-price">
+                                            $500 / per person
+                                        </span>
+                                    </h3>
+                                    <a class="effect blogs-btn d-block" href="#Book_Now" title="Read More">Book Now</a>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--===============================================================
+          tour-details
+  =================================================================-->
+
+
+    <!---==============================================================================================
+                  Librairies
+    ==================================================================================================-->
+    <!-- ================= bootstrap@5 ========== -->
+    <script src="./assets/lib/bootstrap/bootstrap.min.js"></script>
+    <!-- Swiper Slider js  -->
+    <script src="./assets/lib/swiper/swiper-bundle.min.js"></script>
+    <!-- js  -->
+    <!-- <script src="./assets/js/bootstrap.bundle.js"></script> -->
+    <!--  jQuery js  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- flat pickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <script src="./assets/js/tourDetails.js"></script>
+    <script src="./assets/js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ar.js"></script>
+ <script>
+    // Booking data
+    const bookingData = {
+        selectedDate: null,
+        selectedCategory: "",
+        selectedPrice: 0,
+        rooms: 1,
+        roomOccupants: [{ adults: 1, children: 0, infants: 0 }]
+    };
+
+    // Date setup
+    const today = new Date();
+    const fp = flatpickr("#datePicker", {
+        locale: "en",
+        dateFormat: "Y-m-d",
+        minDate: "today",
+        disableMobile: true,
+        onChange: function (selectedDates, dateStr) {
+            bookingData.selectedDate = selectedDates[0];
+            const formattedDate = formatDate(selectedDates[0]);
+            document.getElementById("selectedDate").textContent = `Selected date: ${formattedDate}`;
+            document.getElementById("selectedDate").style.display = "block";
+            updateNextButtonState();
+        }
+    });
+
+    // General variables
+    let currentStep = 0;
+    const totalSteps = 4;
+
+    // Buttons and elements
+    const nextBtn = document.getElementById("nextBtn");
+    const prevBtn = document.getElementById("prevBtn");
+    const steps = document.querySelectorAll(".step");
+    const stepItems = document.querySelectorAll(".step-item");
+
+    // Setup navigation buttons
+    nextBtn.addEventListener("click", () => {
+        if (currentStep < totalSteps - 1) {
+            goToStep(currentStep + 1);
+        } else {
+            alert("Booking successful!");
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+        if (currentStep > 0) {
+            goToStep(currentStep - 1);
+        }
+    });
+
+    // Navigate between steps
+    function goToStep(stepIndex) {
+        if (stepIndex >= 0 && stepIndex < totalSteps) {
+            // Hide current step
+            steps[currentStep].style.display = "none";
+
+            // Update current step indicator
+            stepItems[currentStep].classList.remove("active");
+            if (stepIndex > currentStep) {
+                stepItems[currentStep].classList.add("completed");
+            }
+
+            // Show new step
+            steps[stepIndex].style.display = "block";
+            stepItems[stepIndex].classList.add("active");
+
+            // Update current step
+            currentStep = stepIndex;
+
+            // Update buttons' state
+            prevBtn.disabled = currentStep === 0;
+            nextBtn.textContent = currentStep === totalSteps - 1 ? " Add to cart" : "Next";
+
+            // Update next button state
+            updateNextButtonState();
+
+            // If it's the last step, update the summary
+            if (currentStep === totalSteps - 1) {
+                updateSummary();
+            }
+        }
+    }
+
+    // Update next button state based on the current step
+    function updateNextButtonState() {
+        switch (currentStep) {
+            case 0:
+                nextBtn.disabled = !bookingData.selectedDate;
+                break;
+            case 1:
+                nextBtn.disabled = !bookingData.selectedCategory;
+                break;
+            case 2:
+                nextBtn.disabled = !(bookingData.rooms > 0 && bookingData.selectedPrice > 0);
+                updateTotalPrice();
+                break;
+            default:
+                nextBtn.disabled = false;
+        }
+    }
+
+    // Setup category selection
+    const categoryItems = document.querySelectorAll(".category-item");
+    categoryItems.forEach(item => {
+        item.addEventListener("click", () => {
+            // Remove previous selection
+            categoryItems.forEach(cat => {
+                cat.classList.remove("selected");
+                cat.querySelector(".category-check").style.display = "none";
+            });
+
+            // Select the chosen category
+            item.classList.add("selected");
+            item.querySelector(".category-check").style.display = "flex";
+
+            // Update data
+            bookingData.selectedCategory = item.dataset.name;
+            bookingData.selectedPrice = parseInt(item.dataset.price);
+
+            // Update next button state
+            updateNextButtonState();
+        });
+    });
+
+    // Setup room number selection
+    const increaseRoomBtn = document.getElementById("increaseRoom");
+    const decreaseRoomBtn = document.getElementById("decreaseRoom");
+    const roomCountElement = document.getElementById("roomCount");
+    const roomCountDisplayElement = document.getElementById("roomCountDisplay");
+
+    increaseRoomBtn.addEventListener("click", () => {
+        bookingData.rooms += 1;
+
+        // Add default occupants for the new room
+        if (bookingData.roomOccupants.length < bookingData.rooms) {
+            bookingData.roomOccupants.push({ adults: 1, children: 0, infants: 0 });
+        }
+
+        // Update display
+        roomCountElement.textContent = bookingData.rooms;
+        roomCountDisplayElement.textContent = bookingData.rooms;
+        decreaseRoomBtn.disabled = false;
+
+        // Update room list
+        renderRooms();
+        updateTotalPrice();
+    });
+
+    decreaseRoomBtn.addEventListener("click", () => {
+        if (bookingData.rooms > 1) {
+            bookingData.rooms -= 1;
+            bookingData.roomOccupants = bookingData.roomOccupants.slice(0, bookingData.rooms);
+
+            // Update display
+            roomCountElement.textContent = bookingData.rooms;
+            roomCountDisplayElement.textContent = bookingData.rooms;
+            decreaseRoomBtn.disabled = bookingData.rooms <= 1;
+
+            // Update room list
+            renderRooms();
+            updateTotalPrice();
+        }
+    });
+
+    // Render room list
+    function renderRooms() {
+        const roomsList = document.getElementById("roomsList");
+        roomsList.innerHTML = "";
+
+        for (let i = 0; i < bookingData.rooms; i++) {
+            const room = document.createElement("div");
+            room.className = "room-card";
+            room.dataset.room = i;
+
+            const occupants = bookingData.roomOccupants[i] || { adults: 1, children: 0, infants: 0 };
+
+            room.innerHTML = `
+                <h3 class="room-title">Room ${i + 1}</h3>
+                
+                <!-- Adults -->
+                <div class="occupant-row">
+                    <div class="occupant-counter">
+                        <span>Adults</span>
+                        <div style="display: flex; align-items: center;">
+                            <button class="counter-button decrease-adult" data-room="${i}" ${occupants.adults <= 1 ? 'disabled' : ''}>-</button>
+                            <div class="counter-value adult-count">${occupants.adults}</div>
+                            <button class="counter-button increase-adult" data-room="${i}">+</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Children -->
+                <div class="occupant-row">
+                    <div class="occupant-counter">
+                        <span>Children</span>
+                        <div style="display: flex; align-items: center;">
+                            <button class="counter-button decrease-child" data-room="${i}" ${occupants.children <= 0 ? 'disabled' : ''}>-</button>
+                            <div class="counter-value child-count">${occupants.children}</div>
+                            <button class="counter-button increase-child" data-room="${i}">+</button>
+                        </div>
+                    </div>
+                 
+                </div>
+                
+                <!-- Infants -->
+                <div class="occupant-row">
+                    <div class="occupant-counter">
+                        <span>Infants</span>
+                        <div style="display: flex; align-items: center;">
+                            <button class="counter-button decrease-infant" data-room="${i}" ${occupants.infants <= 0 ? 'disabled' : ''}>-</button>
+                            <div class="counter-value infant-count">${occupants.infants}</div>
+                            <button class="counter-button increase-infant" data-room="${i}">+</button>
+                        </div>
+                    </div>
+                >
+                </div>
+            `;
+
+            roomsList.appendChild(room);
+        }
+
+        // Add event listeners for buttons
+        addOccupantEventListeners();
+    }
+
+    // Add event listeners for occupant buttons
+    function addOccupantEventListeners() {
+        // Adults
+        document.querySelectorAll(".increase-adult").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const roomIndex = parseInt(this.dataset.room);
+                updateOccupancy(roomIndex, "adults", 1);
+            });
+        });
+
+        document.querySelectorAll(".decrease-adult").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const roomIndex = parseInt(this.dataset.room);
+                updateOccupancy(roomIndex, "adults", -1);
+            });
+        });
+
+        // Children
+        document.querySelectorAll(".increase-child").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const roomIndex = parseInt(this.dataset.room);
+                updateOccupancy(roomIndex, "children", 1);
+            });
+        });
+
+        document.querySelectorAll(".decrease-child").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const roomIndex = parseInt(this.dataset.room);
+                updateOccupancy(roomIndex, "children", -1);
+            });
+        });
+
+        // Infants
+        document.querySelectorAll(".increase-infant").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const roomIndex = parseInt(this.dataset.room);
+                updateOccupancy(roomIndex, "infants", 1);
+            });
+        });
+
+        document.querySelectorAll(".decrease-infant").forEach(btn => {
+            btn.addEventListener("click", function () {
+                const roomIndex = parseInt(this.dataset.room);
+                updateOccupancy(roomIndex, "infants", -1);
+            });
+        });
+    }
+
+    // Update occupancy data
+    function updateOccupancy(roomIndex, type, change) {
+        // Ensure room exists
+        if (!bookingData.roomOccupants[roomIndex]) {
+            bookingData.roomOccupants[roomIndex] = { adults: 1, children: 0, infants: 0 };
+        }
+
+        const currentValue = bookingData.roomOccupants[roomIndex][type];
+        const newValue = currentValue + change;
+
+        // Validate allowed values
+        if (type === "adults") {
+            if (newValue < 1) return; // At least one adult is required
+        } else {
+            if (newValue < 0) return; // Children or infants can't be negative
+        }
+
+        // Update value
+        bookingData.roomOccupants[roomIndex][type] = newValue;
+
+        // Update display
+        const room = document.querySelector(`.room-card[data-room="${roomIndex}"]`);
+        const countElement = room.querySelector(`.${type}-count`);
+        countElement.textContent = newValue;
+
+        // Update button state
+        const decreaseButton = room.querySelector(`.decrease-${type}`);
+        if (type === "adults") {
+            decreaseButton.disabled = newValue <= 1;
+        } else {
+            decreaseButton.disabled = newValue <= 0;
+        }
+    }
+
+    // Update total price
+    function updateTotalPrice() {
+        const totalPrice = bookingData.selectedPrice * bookingData.rooms;
+        document.getElementById("totalPrice").textContent = `$${totalPrice}`;
+        document.getElementById("pricePerRoom").textContent = `$${bookingData.selectedPrice}`;
+        document.getElementById("roomCountDisplay").textContent = bookingData.rooms;
+    }
+
+    // Update summary page
+    function updateSummary() {
+        if (!bookingData.selectedDate) return;
+
+        // Booking date
+        const formattedDate = formatDate(bookingData.selectedDate);
+        document.getElementById("summaryDate").textContent = formattedDate;
+
+        // Category
+        document.getElementById("summaryCategory").textContent = bookingData.selectedCategory;
+
+        // Room count
+        document.getElementById("summaryRooms").textContent = bookingData.rooms;
+
+        // Occupancy details
+        const roomDetailsList = document.getElementById("roomDetailsList");
+        let roomDetailsHTML = '<div class="summary-label">Occupancy details</div>';
+
+        bookingData.roomOccupants.forEach((room, index) => {
+            roomDetailsHTML += `
+                <div class="summary-value" style="margin-top: 8px;">
+                    Room ${index + 1}: ${room.adults} adults, ${room.children} children, ${room.infants} infants
+                </div>
+            `;
+        });
+
+        roomDetailsList.innerHTML = roomDetailsHTML;
+
+        // Total price
+        const totalPrice = bookingData.selectedPrice * bookingData.rooms;
+        document.getElementById("summaryPrice").textContent = `$${totalPrice}`;
+        document.getElementById("summaryPricePerRoom").textContent = `$${bookingData.selectedPrice}`;
+        document.getElementById("summaryPriceRoomCount").textContent = bookingData.rooms;
+    }
+
+    // Format date
+    function formatDate(date) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(date).toLocaleDateString('en-US', options);
+    }
+
+    // Update occupancy data
+function updateOccupancy(roomIndex, type, change) {
+    // Ensure room exists
+    if (!bookingData.roomOccupants[roomIndex]) {
+        bookingData.roomOccupants[roomIndex] = { adults: 1, children: 0, infants: 0 };
+    }
+    const currentValue = bookingData.roomOccupants[roomIndex][type];
+    const newValue = currentValue + change;
+
+    // Validate allowed values
+    if (type === "adults") {
+        if (newValue < 1) return; // At least one adult is required
+    } else {
+        if (newValue < 0) return; // Children or infants can't be negative
+    }
+
+    // Update value
+    bookingData.roomOccupants[roomIndex][type] = newValue;
+
+    // Update display
+    const room = document.querySelector(`.room-card[data-room="${roomIndex}"]`);
+    const countElement = room.querySelector(`.${type}-count`);
+    countElement.textContent = newValue;
+
+    // Update button state
+    const decreaseButton = room.querySelector(`.decrease-${type}`);
+    decreaseButton.disabled = newValue <= 0;
+}
+
+
+    // Initialize page
+    renderRooms();
+    updateTotalPrice();
+</script>
+
+</body>
+
+</html>
