@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Template - Travel Tour Agency Template" />
+    <meta name="keywords" content="new, html, Tour, travel, creative, booking,  personal, " />
+    <title>New travel Agency</title>
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="manifest" href="./assets/images/logo4-removebg-preview.png">
+    <link rel="mask-icon" href="./assets/images/logo4-removebg-preview.png" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="360x360" href="./assets/images/logo4-removebg-preview.png">
+
+    <!---==============================================================================================
+                          Librairies
+        ==================================================================================================-->
+    <!-- ========== font-awesome =========== -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+        integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ============= Bootstrap  ===========  -->
+    <link href="./assets/lib/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <!-- ============= swiper  ===========  -->
+    <link rel="stylesheet" href="./assets/lib/swiper/swiper-bundle.min.css" />
+    <!-- =============  jquery ===========  -->
+    <link rel="stylesheet" href="./assets/lib/jquery/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/lib//lity/lity.min.css" />
+
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <!-- ============= style  css ============= -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/tour.css" />
+    <link rel="stylesheet" href="./assets/css/Wishlist.css" />
+
+</head>
+
+<body>
+
+
+    <!--===============================================================
+            tour-details
+  =================================================================-->
+
+    <section class="tour-details mb-5">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-lg-8">
+
+                    <div class="tour_heading mt-5 mb-3">
+                        <h1>3 Days Bahariya Oasis and White Desert Safari Trip</h1>
+                    </div>
+
+                    <div class="tour-title-box d-flex align-items-center gap-2">
+                        <span>
+                            <i class="fa-solid fa-route"></i>
+                        </span>
+                        <h2 class="tour-details-title">Check your price offer</h2>
+                    </div>
+                    <div class="page-wrapper tour_details_right " id="Book_Now">
+
+
+                        <!-- <h2>Booking Steps</h2> -->
+                        <div class="container" role="main" aria-live="polite">
+
+                            <!-- Step 1: Select Date -->
+                            <section id="step-1" class="step active" aria-label="Select Date">
+                                <!-- <label for="booking-date">Choose a date</label> -->
+                                <!-- <input type="date" id="booking-date" name="booking-date" min="" required aria-required="true" /> -->
+                                <input type="text" id="datePicker" class="flatpickr-input active"
+                                    placeholder="Select booking date" readonly="readonly">
+
+                            </section>
+
+                            <!-- Step 2: Select Category and Price -->
+                            <section id="step-2" class="step" aria-label="Select Category and Price">
+                                <!-- <label for="category-select">Select category and price</label> -->
+                                <select id="category-select" name="category-select" aria-required="true" required>
+                                    <option value="" disabled selected>-- Select category --</option>
+                                    <option value="standard" data-price="100">Standard - $100</option>
+                                    <option value="premium" data-price="180">Premium - $180</option>
+                                    <option value="vip" data-price="250">VIP - $250</option>
+                                </select>
+                                <p id="price-display" style="margin-top:10px; font-weight: 700; font-size: 1.2rem;">
+                                    Price: -</p>
+                            </section>
+
+                            <!-- Step 3: Select Number of Rooms -->
+                            <section id="step-3" class="step" aria-label="Select Number of Rooms">
+                                <!-- <label for="rooms-count">Number of rooms</label> -->
+                                <select id="rooms-count" name="rooms-count" aria-required="true" required>
+                                    <option value="" disabled selected>-- Select number of rooms --</option>
+                                    <option value="1">1 Room</option>
+                                    <option value="2">2 Rooms</option>
+                                    <option value="3">3 Rooms</option>
+                                    <option value="4">4 Rooms</option>
+                                    <option value="5">5 Rooms</option>
+                                </select>
+
+                                <div id="rooms-details" class="rooms-container" aria-live="polite"></div>
+                            </section>
+
+                            <!-- Step 4: Booking Summary -->
+                            <section id="step-4" class="step" aria-label="Booking Summary">
+                                <h3 style="text-align:center; margin-bottom: 12px;">Booking Summary</h3>
+                                <div id="booking-summary" class="summary" tabindex="0" aria-live="polite"></div>
+                            </section>
+
+                            <div class="nav-buttons" role="navigation" aria-label="Step Navigation Buttons">
+                                <button type="button" id="back-btn" disabled>Back</button>
+                                <button type="button" id="next-btn">Next</button>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="tour-details-right h-100">
+                        <div class="tour-details-package mb-5 mt-5">
+
+                            <div class="tour-details-package-item">
+                                <h3 class="tour-details-package-title widget_title" id="Check_Availability">
+                                    <i class="fa-solid fa-signs-post"></i>
+                                    Tour Details
+                                </h3>
+                                <div class="box-info-tour">
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-3">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/from.svg"
+                                                alt="from.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Price from</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">
+                                                3500$</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/duration.svg"
+                                                alt="duration.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Duration </p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">9 Days</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-3">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/tour-location.svg"
+                                                alt="location.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Location</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">
+                                                Cairo, Luxor, Aswan </p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-1">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/people.svg"
+                                                alt="people.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Group size</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">10</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-7">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/tour-type.svg"
+                                                alt="tour-type.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Type</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">package</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="tour-info-group">
+                                        <div class="icon-item background-3">
+                                            <img loading="lazy"
+                                                src="https://www.egyptdaytrips.com/assets/images/pickup.svg"
+                                                alt="pickup.svg">
+                                        </div>
+                                        <div class="info-item">
+                                            <p class="text-sm-medium neutral-600">Pick Up &amp; Drop off</p>
+                                        </div>
+                                        <div class="info-item-para">
+                                            <p class="text-lg-bold neutral-1000">
+                                                Cairo Airport
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tour-details-package mb-5 mt-4">
+                                <div class="tour-details-package-item">
+                                    <h3 class="tour-details-package-title widget_title" id="Check_Availability">
+                                        <i class="fa-solid fa-tags"></i>
+                                        Starts From
+                                        <br>
+                                        <span class="tour-heading-price">
+                                            $500 / per person
+                                        </span>
+                                    </h3>
+                                    <a class="effect blogs-btn d-block" href="#Book_Now" title="Read More">Book Now</a>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!--===============================================================
+          tour-details
+  =================================================================-->
+
+
+    <!---==============================================================================================
+                  Librairies
+    ==================================================================================================-->
+    <!-- ================= bootstrap@5 ========== -->
+    <script src="./assets/lib/bootstrap/bootstrap.min.js"></script>
+    <!-- Swiper Slider js  -->
+    <script src="./assets/lib/swiper/swiper-bundle.min.js"></script>
+    <!-- js  -->
+    <!-- <script src="./assets/js/bootstrap.bundle.js"></script> -->
+    <!--  jQuery js  -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- flat pickr -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <!-- <script src="./assets/js/script.js"></script> -->
+    <script src="./assets/js/tourDetails.js"></script>
+    <script src="./assets/js/cart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ar.js"></script>
+
+    <script>
+        // Initialize flatpickr on the new input
+        flatpickr("#datePicker", {
+            dateFormat: "Y-m-d", // تنسيق التاريخ
+            minDate: "today", // تعيين التاريخ الأدنى ليكون اليوم
+        });
+
+    </script>
+
+    <script>
+        (function () {
+            // Elements
+            const steps = Array.from(document.querySelectorAll('.step'));
+            const backBtn = document.getElementById('back-btn');
+            const nextBtn = document.getElementById('next-btn');
+
+            // Step controls
+            let currentStep = 0;
+
+            // Inputs
+            const dateInput = document.getElementById('datePicker');
+            const categorySelect = document.getElementById('category-select');
+            const priceDisplay = document.getElementById('price-display');
+            const roomsCountSelect = document.getElementById('rooms-count');
+            const roomsDetailsContainer = document.getElementById('rooms-details');
+            const bookingSummaryContainer = document.getElementById('booking-summary');
+
+            // Set min date today
+            function setMinDateToday() {
+                const today = new Date();
+                const yyyy = today.getFullYear();
+                const mm = String(today.getMonth() + 1).padStart(2, '0');
+                const dd = String(today.getDate()).padStart(2, '0');
+                const minDate = `${yyyy}-${mm}-${dd}`;
+                dateInput.min = minDate;
+            }
+            setMinDateToday();
+
+            // Update price display on category change
+            categorySelect.addEventListener('change', () => {
+                const selectedOption = categorySelect.options[categorySelect.selectedIndex];
+                const price = selectedOption.getAttribute('data-price');
+                if (price) {
+                    priceDisplay.textContent = `Price: ${price} USD`;
+                } else {
+                    priceDisplay.textContent = 'Price: -';
+                }
+            });
+
+            // Generate rooms details inputs for adults, children, infants
+            function generateRoomDetails(roomCount) {
+                roomsDetailsContainer.innerHTML = '';
+                for (let i = 1; i <= roomCount; i++) {
+                    const roomDiv = document.createElement('div');
+                    roomDiv.classList.add('room-entry');
+                    roomDiv.setAttribute('aria-label', `Room ${i} details`);
+
+                    roomDiv.innerHTML = `
+                        <label>Room ${i}:</label>
+                        <div class="inline-inputs">
+                        <div>
+                            <label for="room${i}-adults">Adults</label>
+                            <input type="number" id="room${i}-adults" name="room${i}-adults" min="1" max="" value="0" required aria-required="true" />
+                        </div>
+                        <div>
+                            <label for="room${i}-children">Children</label>
+                            <input type="number" id="room${i}-children" name="room${i}-children" min="0" max="" value="0" required aria-required="true" />
+                        </div>
+                        <div>
+                            <label for="room${i}-infants">Infants</label>
+                            <input type="number" id="room${i}-infants" name="room${i}-infants" min="0" max="" value="0" required aria-required="true" />
+                        </div>
+                        </div>
+                    `;
+                    roomsDetailsContainer.appendChild(roomDiv);
+                }
+            }
+
+            // Handle rooms count change to regenerate inputs
+            roomsCountSelect.addEventListener('change', () => {
+                const count = parseInt(roomsCountSelect.value, 10);
+                if (count && count > 0) {
+                    generateRoomDetails(count);
+                } else {
+                    roomsDetailsContainer.innerHTML = '';
+                }
+            });
+
+            // Navigation control
+            function showStep(index) {
+                steps.forEach((step, i) => {
+                    step.classList.toggle('active', i === index);
+                });
+                currentStep = index;
+                backBtn.disabled = currentStep === 0;
+                nextBtn.textContent = currentStep === steps.length - 1 ? 'Add to cart' : 'Next';
+                const activeStep = steps[currentStep];
+                const focusable = activeStep.querySelector('input, select, button, [tabindex]');
+                if (focusable) {
+                    focusable.focus();
+                }
+            }
+
+            backBtn.addEventListener('click', () => {
+                if (currentStep > 0) {
+                    showStep(currentStep - 1);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (!validateStep(currentStep)) return;
+
+                if (currentStep < steps.length - 1) {
+                    showStep(currentStep + 1);
+                    if (currentStep === steps.length - 1) {
+                        renderSummary();
+                    }
+                } else if (currentStep === steps.length - 1) {
+                    window.location.href = 'cart.html';
+                }
+            });
+
+            // Validate inputs per step
+            function validateStep(stepIndex) {
+                switch (stepIndex) {
+                    case 0:
+                        if (!dateInput.value) {
+                            alert('Please select a date.');
+                            dateInput.focus();
+                            return false;
+                        }
+                        return true;
+                    case 1:
+                        if (!categorySelect.value) {
+                            alert('Please select a category.');
+                            categorySelect.focus();
+                            return false;
+                        }
+                        return true;
+                    case 2:
+                        if (!roomsCountSelect.value) {
+                            alert('Please select number of rooms.');
+                            roomsCountSelect.focus();
+                            return false;
+                        }
+                        const roomCount = parseInt(roomsCountSelect.value, 10);
+                        for (let i = 1; i <= roomCount; i++) {
+                            let adults = document.getElementById(`room${i}-adults`);
+                            let children = document.getElementById(`room${i}-children`);
+                            let infants = document.getElementById(`room${i}-infants`);
+                            if (!adults.value || adults.value < 1) {
+                                alert(`Please enter at least 1 adult in Room ${i}.`);
+                                adults.focus();
+                                return false;
+                            }
+                            if (children.value === '' || children.value < 0) {
+                                alert(`Please enter number of children in Room ${i}.`);
+                                children.focus();
+                                return false;
+                            }
+                            if (infants.value === '' || infants.value < 0) {
+                                alert(`Please enter number of infants in Room ${i}.`);
+                                infants.focus();
+                                return false;
+                            }
+                        }
+                        return true;
+                    case 3:
+                        return true;
+                }
+                return true;
+            }
+
+            // Render summary based on selections
+            function renderSummary() {
+                const lines = [];
+
+                if (dateInput.value) {
+                    const dateObj = new Date(dateInput.value);
+                    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                    const dateStr = dateObj.toLocaleDateString('en-US', options);
+                    lines.push(`<div class="summary-item"><span>Date:</span> ${dateStr}</div>`);
+                }
+
+                if (categorySelect.value) {
+                    const option = categorySelect.options[categorySelect.selectedIndex];
+                    const catText = option.textContent;
+                    lines.push(`<div class="summary-item"><span>Category & Price:</span> ${catText}</div>`);
+                }
+
+                if (roomsCountSelect.value) {
+                    lines.push(`<div class="summary-item"><span>Number of Rooms:</span> ${roomsCountSelect.value}</div>`);
+
+                    const roomCount = parseInt(roomsCountSelect.value, 10);
+                    for (let i = 1; i <= roomCount; i++) {
+                        const adults = document.getElementById(`room${i}-adults`).value;
+                        const children = document.getElementById(`room${i}-children`).value;
+                        const infants = document.getElementById(`room${i}-infants`).value;
+                        lines.push(`<div class="summary-item"><span>Room ${i}:</span> Adults ${adults}, Children ${children}, Infants ${infants}</div>`);
+                    }
+                }
+
+                bookingSummaryContainer.innerHTML = lines.join('');
+            }
+
+            // Reset the form for new booking
+            function resetForm() {
+                dateInput.value = '';
+                categorySelect.value = '';
+                priceDisplay.textContent = 'Price: -';
+                roomsCountSelect.value = '';
+                roomsDetailsContainer.innerHTML = '';
+                bookingSummaryContainer.innerHTML = '';
+                showStep(0);
+            }
+
+            // Initialize
+            showStep(0);
+        })();
+
+
+    </script>
+
+</body>
+
+</html>
